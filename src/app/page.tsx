@@ -1,18 +1,10 @@
-import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, Button, IconButton } from '@mui/material'
-import Link from 'next/link'
+import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, IconButton } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-
-export type User = {
-  id: number,
-  name: string,
-  surname: string,
-  email: string,
-  birthday: string,
-}
+import { User } from './types/types';
 
 export default async function Home() {
-  const userResponse = await fetch(`http://localhost:8080/users`, { cache: 'force-cache' })
+  const userResponse = await fetch(`http://localhost:8080/users`, { cache: 'no-store' })
   const users = (await userResponse.json()).data as User[]
 
   return (
