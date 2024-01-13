@@ -1,4 +1,4 @@
-import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, IconButton } from '@mui/material'
+import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, IconButton, Button, Typography } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { User } from './types/types';
@@ -9,6 +9,12 @@ export default async function Home() {
 
   return (
     <TableContainer className='user-table' sx={{ mx: 'auto', width: '75%', height: '65%' }} component={Paper}>
+      <div style={{margin: "12px", display: 'flex', justifyContent: "space-between"}} >
+        <Typography variant="h4" >
+          User List
+        </Typography>
+        <Button variant="contained" size="large">Add User</Button>
+      </div>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>

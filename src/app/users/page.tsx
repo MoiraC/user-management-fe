@@ -1,5 +1,3 @@
-'use client'
-
 import { Button, TextField } from "@mui/material";
 import { SubmitButton } from "../components/submitButton";
 import { createUser } from "../actions/createUserAction";
