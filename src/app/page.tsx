@@ -25,7 +25,7 @@ export default async function Home() {
             <TableCell align="right">Name</TableCell>
             <TableCell align="right">Surname</TableCell>
             <TableCell align="right">Email</TableCell>
-            <TableCell align="right">Birthday</TableCell>
+            <TableCell align="right">Gender</TableCell>
             <TableCell align="right">Options</TableCell>
           </TableRow>
         </TableHead>
@@ -41,7 +41,7 @@ export default async function Home() {
               <TableCell align="right">{user.name}</TableCell>
               <TableCell align="right">{user.surname}</TableCell>
               <TableCell align="right">{user.email}</TableCell>
-              <TableCell align="right">{user.birthday}</TableCell>
+              <TableCell align="right">{user.gender}</TableCell>
               <TableCell align="right">
                 <Link href={`/users/${user.id}/update`}>
                   <IconButton aria-label="edit" color="primary">

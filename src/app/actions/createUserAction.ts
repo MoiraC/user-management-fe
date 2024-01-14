@@ -8,7 +8,7 @@ export async function createUser(formData: FormData) {
             name: formData.get('name'),
             surname: formData.get('surname'),
             email: formData.get('email'),
-            birthday: formData.get('birthday'),
+            gender: formData.get('gender'),
         } as User
         
         const response = await fetch("http://localhost:8080/users/create", {
@@ -19,6 +19,12 @@ export async function createUser(formData: FormData) {
             body: JSON.stringify(user), 
             cache: 'no-store' 
           });
+
+        if(response.ok)
+            console.log(`user created`);
+        else 
+            console.log('user creation failed')
+
 
     } catch (error) {
         console.log(error)        

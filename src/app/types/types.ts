@@ -3,5 +3,5 @@ export type User = {
     name: string,
     surname: string,
     email: string,
-    birthday: string,
+    gender: string,
   }
