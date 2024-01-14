@@ -2,6 +2,7 @@ import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { User } from './types/types';
+import Link from 'next/link';
 
 export default async function Home() {
   const userResponse = await fetch(`http://localhost:8080/users`, { cache: 'no-store' })
@@ -13,7 +14,9 @@ export default async function Home() {
         <Typography variant="h4" >
           User List
         </Typography>
-        <Button variant="contained" size="large">Add User</Button>
+        <Link href="/users">
+          <Button variant="contained" size="large">Add User</Button>
+        </Link>
       </div>
       <Table aria-label="simple table">
         <TableHead>
@@ -40,12 +43,16 @@ export default async function Home() {
               <TableCell align="right">{user.email}</TableCell>
               <TableCell align="right">{user.birthday}</TableCell>
               <TableCell align="right">
-                <IconButton aria-label="edit" color="primary">
-                  <EditIcon />
-                </IconButton>
-                <IconButton aria-label="delete" color="error">
-                  <DeleteIcon />
-                </IconButton>
+                <Link href={`/users/${user.id}/update`}>
+                  <IconButton aria-label="edit" color="primary">
+                    <EditIcon />
+                  </IconButton>
+                </Link>
+                <Link href={`/users/${user.id}/delete`}>
+                  <IconButton aria-label="delete" color="error">
+                    <DeleteIcon />
+                  </IconButton>
+                </Link>
               </TableCell>
             </TableRow>
           ))}
