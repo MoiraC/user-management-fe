@@ -1,6 +1,6 @@
-import { TextField, Button, Input, MenuItem, Select, InputLabel, RadioGroup, FormControlLabel, Radio, FormControl } from "@mui/material";
+import { TextField, Button, MenuItem, Select, InputLabel, FormControl } from "@mui/material";
 import { User } from "../types/types";
-import { redirect, useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { GoBack } from "./goBack";
 
 // TODO: make the form a component and use 2 different page for edit and create pages (component may get id to handle the status of process)
@@ -68,7 +68,7 @@ export default async function UserForm({
                  />
                  
             <FormControl variant="filled"  >
-                 <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                <InputLabel id="demo-simple-select-label">Gender</InputLabel>
                 <Select
                     name="gender"
                     labelId="demo-simple-select-label"
@@ -88,7 +88,6 @@ export default async function UserForm({
                 </Select>
             </FormControl>
       
-
             <Button variant="contained"
                 color="primary"
                 type="submit">{buttonText}</Button>
